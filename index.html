@@ -689,8 +689,8 @@
         <button class="button" id="startButton">Send Birthday Surprise</button>
     </div>
 
-    <audio id="birthdayMusic" hidden>
-        <source src="https://www.kozco.com/tech/piano2.wav" type="audio/wav">
+    <audio id="birthdayMusic" preload="auto" playsinline muted hidden>
+        <source src="https://cdn.pixabay.com/audio/2022/03/24/01-40-00-623_960x540.wav" type="audio/wav">
         Your browser does not support the audio element.
     </audio>
 
@@ -921,7 +921,16 @@
                 message.style.opacity = "0";
                 message.style.animation = "none";
                 
-                audio.play().catch(error => console.error("Audio playback failed:", error));
+                // Unmute and play audio
+                audio.muted = false;
+                audio.play().catch(error => {
+                    console.error("Audio playback failed:", error.message);
+                    if (error.name === "NotAllowedError") {
+                        console.log("Audio blocked: Requires user interaction. Ensure audio is triggered by a direct user action.");
+                    } else if (error.name === "NotSupportedError") {
+                        console.log("Audio format not supported. Try a different source or format.");
+                    }
+                });
                 
                 // Make cake container visible
                 cakeContainer.style.opacity = "1";
@@ -994,10 +1003,7 @@
             }
             
             startButton.addEventListener("click", startAnimation);
-            startButton.addEventListener("touchstart", (e) => {
-                e.preventDefault();
-                startAnimation();
-            });
+            startButton.addEventListener("touchstart", startAnimation);
             
             // Initialize ganache drips
             initGanacheDrips();
