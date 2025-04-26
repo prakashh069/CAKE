@@ -127,7 +127,7 @@
         .cake-base {
             position: absolute;
             bottom: 0;
-            width: 260px;
+            width: 280px;
             height: 40px;
             background: linear-gradient(to bottom, #f8f4e8, #e8e0d0);
             border-radius: 20px;
@@ -567,7 +567,7 @@
             }
             
             .cake-base {
-                width: 230px;
+                width: 250px;
             }
             
             .layer-1 {
@@ -613,7 +613,7 @@
             }
             
             .cake-base {
-                width: 200px;
+                width: 220px;
             }
             
             .layer-1 {
@@ -904,7 +904,8 @@
                 const splash = document.createElement("div");
                 splash.className = "splash";
                 splash.style.left = (x - 12) + "px";
-                splash.style.top = (x - 12) + "px";
+                // Fixed typo: Changed 'x' to 'y' for top positioning
+                splash.style.top = (y - 12) + "px";
                 cakeContainer.appendChild(splash);
                 splash.style.animation = "splash 0.4s forwards";
                 
