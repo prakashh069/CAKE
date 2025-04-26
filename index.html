@@ -17,9 +17,9 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: linear-gradient(135deg, #ff6b6b, #ffcc00, #4dd0e1, #f06292);
-            background-size: 500% 500%;
-            animation: gradientBG 15s ease infinito;
+            background: linear-gradient(135deg, #ff6b6b, #ffcc00, #4dd0e1, #f06292, #ffd740);
+            background-size: 600% 600%;
+            animation: gradientBG 12s ease infinite;
             font-family: 'Comic Sans MS', 'Arial', sans-serif;
             overflow: hidden;
             position: relative;
@@ -46,37 +46,35 @@
         }
         
         .container {
-            text-align: center;
             position: relative;
             width: 100%;
-            max-width: 600px;
-            padding: 20px;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             z-index: 10;
-            padding-bottom: 100px;
         }
         
         .birthday-message {
-            background: linear-gradient(45deg, #ff4081, #ffd740);
+            background: linear-gradient(to right, #ff6b6b, #ffd740);
             padding: 20px 30px;
             border-radius: 25px;
             box-shadow: 0 8px 20px rgba(255, 64, 129, 0.5), 0 0 15px rgba(255, 255, 255, 0.8);
             font-size: clamp(24px, 6vw, 28px);
             color: #fff;
             font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             opacity: 0;
             position: absolute;
+            top: 70%;
             left: 50%;
             transform: translateX(-50%);
-            bottom: -100px;
             z-index: 50;
-            border: 3px solid transparent;
-            border-image: linear-gradient(45deg, #ffd700, #ff69b4, #00ffcc) 1;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
+            will-change: transform, opacity;
         }
         
         .birthday-message::before {
@@ -115,42 +113,40 @@
         }
         
         .cake-container {
-            position: relative;
-            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             width: 300px;
             height: 300px;
-            filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.2));
+            filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.2));
             z-index: 10;
+            opacity: 0;
         }
         
-        .cake-container::after {
-            content: '';
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            right: -15px;
-            bottom: -15px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
-            z-index: -1;
-            animation: glow 3s ease-in-out infinite;
-        }
-        
-        @keyframes glow {
-            0% { opacity: 0.6; transform: scale(1); }
-            50% { opacity: 0.9; transform: scale(1.03); }
-            100% { opacity: 0.6; transform: scale(1); }
-        }
-        
-        .cake-plate {
+        .cake-base {
             position: absolute;
             bottom: 0;
-            width: 300px;
-            height: 25px;
-            background: linear-gradient(to bottom, #eceff1, #cfd8dc);
-            border-radius: 50%;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), inset 0 -2px 6px rgba(0, 0, 0, 0.1);
-            z-index: 10;
+            width: 260px;
+            height: 40px;
+            background: linear-gradient(to bottom, #f8f4e8, #e8e0d0);
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2), inset 0 2px 5px rgba(255, 255, 255, 0.3);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+        }
+        
+        .cake-base::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 10%;
+            right: 10%;
+            height: 5px;
+            background: linear-gradient(to right, #ffd700, #ffecb3);
+            border-radius: 3px;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
         }
         
         .cake-layer {
@@ -159,132 +155,136 @@
             transform: translateX(-50%) translateY(60px);
             opacity: 0;
             transition: transform 0.8s ease-out, opacity 0.8s ease-out;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            border-radius: 50%;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.3);
+            will-change: transform, opacity;
         }
         
         .layer-1 {
             width: 240px;
             height: 70px;
-            bottom: 25px;
+            bottom: 40px;
             z-index: 3;
-            background: linear-gradient(to right, #fff3e0, #ffccbc);
+            background: linear-gradient(to right, #5c4033, #4a3528);
         }
         
         .layer-2 {
             width: 200px;
             height: 70px;
-            bottom: 95px;
+            bottom: 110px;
             z-index: 2;
-            background: linear-gradient(to right, #f8bbd0, #f48fb1);
+            background: linear-gradient(to right, #5c4033, #4a3528);
         }
         
         .layer-3 {
             width: 160px;
-            height: 70px;
-            bottom: 165px;
+            height: 80px;
+            bottom: 180px;
             z-index: 1;
-            background: linear-gradient(to right, #b2ebf2, #4dd0e1);
+            background: linear-gradient(to right, #5c4033, #4a3528);
         }
         
-        .frosting {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 20px;
-            border-radius: 0 0 50% 50%;
-            box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        .frosting-top {
+        .cake-layer::after {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 18px;
-            border-radius: 50% 50% 0 0;
-            background: rgba(255, 255, 255, 0.6);
-        }
-        
-        .layer-1 .frosting {
-            background: linear-gradient(to right, #ffab91, #ff8a65);
-        }
-        
-        .layer-2 .frosting {
-            background: linear-gradient(to right, #f06292, #ec407a);
-        }
-        
-        .layer-3 .frosting {
-            background: linear-gradient(to right, #4dd0e1, #26c6da);
+            height: 10px;
+            background: linear-gradient(to right, #3d2b1f, #2d1c14);
+            border-radius: 15px 15px 0 0;
+            opacity: 0.9;
+            z-index: 2;
         }
         
         .cake-texture {
             position: absolute;
-            top: 18px;
+            top: 0;
             left: 0;
             right: 0;
-            bottom: 20px;
-            background: repeating-linear-gradient(
-                45deg,
-                rgba(255, 255, 255, 0.3),
-                rgba(255, 255, 255, 0.3) 8px,
-                transparent 8px,
-                transparent 16px
-            );
-            border-radius: 4px;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.2), transparent),
+                repeating-linear-gradient(
+                    45deg,
+                    rgba(0, 0, 0, 0.03) 0,
+                    rgba(0, 0, 0, 0.03) 2px,
+                    transparent 2px,
+                    transparent 4px
+                );
+            border-radius: 15px;
         }
         
-        .frosting-drip {
+        .cake-layer::before {
+            content: '';
             position: absolute;
-            background: inherit;
-            width: 12px;
-            height: 20px;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(to right, #f0e0d0, #d7c0a8);
+            z-index: 1;
+        }
+        
+        .ganache-drip {
+            position: absolute;
+            background: linear-gradient(to bottom, #3d2b1f, #2d1c14);
             top: 100%;
-            border-radius: 0 0 12px 12px;
+            border-radius: 0 0 10px 10px;
             z-index: 5;
             transform-origin: top center;
-            filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.15));
+            filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
+        }
+        
+        .whipped-cream {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: radial-gradient(circle at 50% 50%, #ffffff, #f0f0f0);
+            border-radius: 50%;
+            z-index: 20;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
         }
         
         .candle {
             position: absolute;
-            width: 10px;
-            height: 40px;
-            background: linear-gradient(to right, #fff59d, #ffee58);
-            border-radius: 6px;
-            opacity: 0;
+            width: 8px;
+            height: 35px;
+            background: linear-gradient(to right, #fff7d4, #ffed99);
+            border-radius: 4px;
+            opacity: 1;
             z-index: 20;
-            bottom: 200px;
+            top: -35px;
             transform-origin: bottom center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
         }
         
         .flame {
             position: absolute;
-            width: 12px;
-            height: 24px;
+            width: 10px;
+            height: 20px;
             background: radial-gradient(ellipse at bottom, #fff8e1, #ffca28, #ff5722);
             bottom: 100%;
             left: 50%;
             transform: translateX(-50%);
             border-radius: 50% 50% 40% 40%;
-            box-shadow: 0 0 12px #ff5722, 0 0 24px rgba(255, 87, 34, 0.6), 0 0 36px rgba(255, 202, 40, 0.4);
+            box-shadow: 0 0 10px #ff5722, 0 0 20px rgba(255, 87, 34, 0.6);
             transform-origin: bottom;
             animation: flicker 0.8s infinite alternate;
+            will-change: transform, opacity;
         }
         
         .strawberry {
             position: absolute;
             width: 20px;
             height: 24px;
-            background: linear-gradient(145deg, #ef5350, #d32f2f);
+            background: linear-gradient(145deg, #ff3333, #b30000);
             border-radius: 50% 50% 60% 60%;
             z-index: 20;
             transform: translateX(-50%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+            opacity: 1;
+            top: -24px;
+            box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25), inset 0 -2px 4px rgba(0, 0, 0, 0.2);
         }
         
         .strawberry:before {
@@ -295,8 +295,9 @@
             transform: translateX(-50%);
             width: 10px;
             height: 6px;
-            background: linear-gradient(to bottom, #9ccc65, #8bc34a);
+            background: linear-gradient(to bottom, #4CAF50, #2E7D32);
             border-radius: 3px 3px 0 0;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
         
         .strawberry:after {
@@ -306,10 +307,22 @@
             height: 100%;
             border-radius: 50% 50% 60% 60%;
             background: 
-                radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9) 1px, transparent 2px), 
-                radial-gradient(circle at 70% 40%, rgba(255, 255, 255, 0.9) 1px, transparent 2px),
-                radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.9) 1px, transparent 2px),
-                radial-gradient(circle at 60% 70%, rgba(255, 255, 255, 0.9) 1px, transparent 2px);
+                radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.8) 1px, transparent 2px), 
+                radial-gradient(circle at 65% 35%, rgba(255, 255, 255, 0.8) 1px, transparent 2px),
+                radial-gradient(circle at 45% 60%, rgba(255, 255, 255, 0.8) 1px, transparent 2px),
+                radial-gradient(circle at 30% 50%, rgba(0, 0, 0, 0.1) 1.5px, transparent 2px);
+        }
+        
+        .strawberry-shine {
+            position: absolute;
+            width: 8px;
+            height: 5px;
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.9), transparent);
+            border-radius: 50%;
+            top: 20%;
+            left: 25%;
+            transform: rotate(-25deg);
+            opacity: 0.7;
         }
         
         @keyframes flicker {
@@ -324,11 +337,12 @@
             position: absolute;
             width: 24px;
             height: 24px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 250, 0.9);
             border-radius: 50%;
             transform: scale(0);
             opacity: 0;
             z-index: 25;
+            will-change: transform, opacity;
         }
         
         @keyframes splash {
@@ -345,20 +359,14 @@
             opacity: 0;
             transition: opacity 0.4s ease;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-        }
-        
-        .candy {
-            position: absolute;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+            will-change: opacity;
         }
         
         .button {
-            margin-top: 40px;
+            position: absolute;
+            top: 85%;
+            left: 50%;
+            transform: translateX(-50%);
             padding: 15px 28px;
             background: linear-gradient(45deg, #ff4081, #e91e63);
             color: white;
@@ -371,19 +379,19 @@
             box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
             text-transform: uppercase;
             letter-spacing: 1px;
-            position: relative;
             overflow: hidden;
             z-index: 100;
+            will-change: transform, box-shadow;
         }
         
         .button:hover {
             background: linear-gradient(45deg, #e91e63, #ff4081);
             box-shadow: 0 8px 20px rgba(233, 30, 99, 0.6);
-            transform: translateY(-2px);
+            transform: translateX(-50%) translateY(-2px);
         }
         
         .button:active {
-            transform: translateY(1px);
+            transform: translateX(-50%) translateY(1px);
             box-shadow: 0 2px 10px rgba(233, 30, 99, 0.4);
         }
         
@@ -395,10 +403,11 @@
             position: absolute;
             width: 4px;
             height: 4px;
-            background: #ffccbc;
+            background: #5c4033;
             border-radius: 50%;
             opacity: 0;
             transition: opacity 0.3s ease;
+            will-change: opacity;
         }
         
         .confetti {
@@ -407,6 +416,7 @@
             height: 12px;
             opacity: 0;
             z-index: 30;
+            will-change: transform, opacity;
         }
         
         @keyframes confettiFall {
@@ -424,6 +434,7 @@
             opacity: 0;
             z-index: 30;
             box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
+            will-change: transform, opacity;
         }
         
         @keyframes popperBurst {
@@ -441,6 +452,7 @@
             opacity: 0;
             z-index: 35;
             box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
+            will-change: transform, opacity;
         }
         
         @keyframes fireworkBurst {
@@ -449,26 +461,16 @@
             100% { transform: scale(3.5); opacity: 0; }
         }
         
-        .strawberry-shine {
-            position: absolute;
-            width: 8px;
-            height: 5px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
-            top: 20%;
-            left: 25%;
-            transform: rotate(-25deg);
-        }
-        
         .balloon {
             position: absolute;
             width: 60px;
             height: 80px;
             background: radial-gradient(circle at 30% 30%, #ffd740, #ff9100);
             border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            opacity: 0.8;
+            opacity: 0;
             z-index: 2;
-            animation: float 12s infinite ease-in-out;
+            transform: translateZ(0);
+            will-change: transform, opacity;
         }
         
         .balloon::after {
@@ -480,6 +482,11 @@
             width: 3px;
             height: 25px;
             background: #bdbdbd;
+        }
+        
+        .balloon.animated {
+            opacity: 0.8;
+            animation: float 12s infinite ease-in-out;
         }
         
         @keyframes float {
@@ -494,9 +501,11 @@
             height: 6px;
             background: #ffffff;
             border-radius: 50%;
-            opacity: 0.6;
+            opacity: 0;
             z-index: 3;
             animation: particleFloat 8s infinite linear;
+            transform: translateZ(0);
+            will-change: transform, opacity;
         }
         
         @keyframes particleFloat {
@@ -511,9 +520,10 @@
             height: 8px;
             background: white;
             border-radius: 50%;
-            box-shadow: 0 0 12px rgba(255, 255, 255, 0.9), 0 0 24px rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
             opacity: 0;
             z-index: 100;
+            will-change: opacity;
         }
         
         @keyframes sparkle {
@@ -526,16 +536,17 @@
             .birthday-message {
                 font-size: clamp(20px, 5vw, 24px);
                 padding: 15px 25px;
+                top: 68%;
             }
             
             .cake-container {
                 width: 260px;
                 height: 260px;
-                transform: scale(0.85);
+                transform: translate(-50%, -50%) scale(0.85);
             }
             
-            .cake-plate {
-                width: 260px;
+            .cake-base {
+                width: 230px;
             }
             
             .layer-1 {
@@ -553,6 +564,7 @@
             .button {
                 padding: 12px 22px;
                 font-size: 16px;
+                top: 82%;
             }
         }
         
@@ -560,16 +572,17 @@
             .birthday-message {
                 font-size: clamp(18px, 5vw, 20px);
                 padding: 10px 18px;
+                top: 66%;
             }
             
             .cake-container {
                 width: 220px;
                 height: 220px;
-                transform: scale(0.8);
+                transform: translate(-50%, -50%) scale(0.8);
             }
             
-            .cake-plate {
-                width: 220px;
+            .cake-base {
+                width: 200px;
             }
             
             .layer-1 {
@@ -580,21 +593,39 @@
             .layer-2 {
                 width: 160px;
                 height: 60px;
-                bottom: 85px;
+                bottom: 100px;
             }
             
             .layer-3 {
                 width: 120px;
                 height: 60px;
-                bottom: 145px;
+                bottom: 160px;
+            }
+            
+            .button {
+                padding: 10px 18px;
+                font-size: 14px;
+                top: 80%;
             }
         }
     </style>
+    <svg style="display: none">
+        <filter id="gloss">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="1"/>
+            <feSpecularLighting result="specOut" in="blur" surfaceScale="5" specularConstant="0.8" specularExponent="20">
+                <fePointLight x="150" y="150" z="100"/>
+            </feSpecularLighting>
+            <feComposite in="specOut" in2="SourceAlpha" operator="in"/>
+            <feComposite in2="SourceGraphic" operator="over"/>
+        </filter>
+    </svg>
 </head>
 <body>
     <div class="balloon" style="left: 5%; bottom: 5%; animation-delay: 0s;"></div>
     <div class="balloon" style="right: 10%; bottom: 15%; animation-delay: 4s; background: radial-gradient(circle at 30% 30%, #00e5ff, #0088cc);"></div>
     <div class="balloon" style="left: 15%; bottom: 10%; animation-delay: 8s; background: radial-gradient(circle at 30% 30%, #ff4081, #d81b60);"></div>
+    <div class="balloon" style="right: 20%; bottom: 5%; animation-delay: 2s; background: radial-gradient(circle at 30% 30%, #4caf50, #2e7d32);"></div>
+    <div class="balloon" style="left: 25%; bottom: 20%; animation-delay: 6s; background: radial-gradient(circle at 30% 30%, #ab47bc, #7b1fa2);"></div>
     
     <div class="container">
         <div class="birthday-message">
@@ -603,37 +634,56 @@
         
         <div class="cake-container">            
             <div class="cake-layer layer-3">
-                <div class="frosting-top"></div>
                 <div class="cake-texture"></div>
-                <div class="frosting"></div>
-                <div class="frosting-drip" style="left: 20%; transform: scaleY(0.7);"></div>
-                <div class="frosting-drip" style="left: 50%; transform: scaleY(1.1);"></div>
-                <div class="frosting-drip" style="left: 80%; transform: scaleY(0.8);"></div>
+                <div class="ganache-drip" style="left: 10%; width: 15px; height: 35px;"></div>
+                <div class="ganache-drip" style="left: 30%; width: 20px; height: 40px;"></div>
+                <div class="ganache-drip" style="left: 50%; width: 18px; height: 35px;"></div>
+                <div class="ganache-drip" style="left: 70%; width: 12px; height: 30px;"></div>
+                <div class="ganache-drip" style="left: 90%; width: 15px; height: 35px;"></div>
+                <div class="whipped-cream" style="left: 30%; top: 10px;"></div>
+                <div class="whipped-cream" style="right: 30%; top: 10px;"></div>
+                <div class="candle" style="left: 20%;">
+                    <div class="flame"></div>
+                </div>
+                <div class="strawberry" style="left: 35%;">
+                    <div class="strawberry-shine"></div>
+                </div>
+                <div class="candle" style="left: 50%;">
+                    <div class="flame"></div>
+                </div>
+                <div class="strawberry" style="left: 65%;">
+                    <div class="strawberry-shine"></div>
+                </div>
+                <div class="candle" style="left: 80%;">
+                    <div class="flame"></div>
+                </div>
             </div>
             
             <div class="cake-layer layer-2">
-                <div class="frosting-top"></div>
                 <div class="cake-texture"></div>
-                <div class="frosting"></div>
-                <div class="frosting-drip" style="left: 15%; transform: scaleY(1.0);"></div>
-                <div class="frosting-drip" style="left: 40%; transform: scaleY(0.6);"></div>
-                <div class="frosting-drip" style="left: 65%; transform: scaleY(0.9);"></div>
-                <div class="frosting-drip" style="left: 85%; transform: scaleY(0.7);"></div>
+                <div class="ganache-drip" style="left: 10%; width: 15px; height: 30px;"></div>
+                <div class="ganache-drip" style="left: 25%; width: 18px; height: 35px;"></div>
+                <div class="ganache-drip" style="left: 40%; width: 12px; height: 25px;"></div>
+                <div class="ganache-drip" style="left: 55%; width: 15px; height: 30px;"></div>
+                <div class="ganache-drip" style="left: 70%; width: 14px; height: 28px;"></div>
+                <div class="ganache-drip" style="left: 85%; width: 12px; height: 25px;"></div>
             </div>
             
             <div class="cake-layer layer-1">
-                <div class="frosting-top"></div>
                 <div class="cake-texture"></div>
-                <div class="frosting"></div>
-                <div class="frosting-drip" style="left: 10%; transform: scaleY(0.8);"></div>
-                <div class="frosting-drip" style="left: 25%; transform: scaleY(1.1);"></div>
-                <div class="frosting-drip" style="left: 45%; transform: scaleY(0.7);"></div>
-                <div class="frosting-drip" style="left: 60%; transform: scaleY(1.0);"></div>
-                <div class="frosting-drip" style="left: 75%; transform: scaleY(0.6);"></div>
-                <div class="frosting-drip" style="left: 90%; transform: scaleY(0.9);"></div>
+                <div class="ganache-drip" style="left: 5%; width: 15px; height: 20px;"></div>
+                <div class="ganache-drip" style="left: 20%; width: 18px; height: 25px;"></div>
+                <div class="ganache-drip" style="left: 35%; width: 12px; height: 20px;"></div>
+                <div class="ganache-drip" style="left: 50%; width: 16px; height: 22px;"></div>
+                <div class="ganache-drip" style="left: 65%; width: 10px; height: 18px;"></div>
+                <div class="ganache-drip" style="left: 80%; width: 14px; height: 20px;"></div>
+                <div class="ganache-drip" style="left: 95%; width: 12px; height: 18px;"></div>
             </div>
             
-            <div class="cake-plate"></div>
+            <div class="cake-base">
+                <div class="crumb" style="left: 20%; top: 50%; opacity: 0;"></div>
+                <div class="crumb" style="left: 80%; top: 60%; opacity: 0;"></div>
+            </div>
         </div>
         
         <button class="button" id="startButton">Send Birthday Surprise</button>
@@ -657,7 +707,7 @@
             const colors = ["#ff5252", "#3f51b5", "#ffd600", "#4caf50", "#ab47bc", "#ff9100", "#f50057", "#00e5ff", "#ff4081", "#651fff", "#00e676", "#ff3d00"];
             
             function createSparkles() {
-                for (let i = 0; i < 25; i++) {
+                for (let i = 0; i < 15; i++) {
                     setTimeout(() => {
                         const sparkle = document.createElement("div");
                         sparkle.className = "sparkle";
@@ -667,14 +717,14 @@
                         sparkle.style.width = size + "px";
                         sparkle.style.height = size + "px";
                         document.body.appendChild(sparkle);
-                        sparkle.style.animation = `sparkle ${Math.random() * 1.5 + 1}s infinite`;
-                        setTimeout(() => sparkle.remove(), 8000);
+                        sparkle.style.animation = `sparkle ${Math.random() * 1.5 + 1}s forwards`;
+                        setTimeout(() => sparkle.remove(), 2500);
                     }, i * 200);
                 }
             }
             
             function createParticles() {
-                for (let i = 0; i < 20; i++) {
+                for (let i = 0; i < 10; i++) {
                     const particle = document.createElement("div");
                     particle.className = "particle";
                     particle.style.left = Math.random() * 100 + "vw";
@@ -686,85 +736,36 @@
                 }
             }
             
-            function initFrostingDrips() {
-                const layer1Drips = layer1.querySelectorAll(".frosting-drip");
-                const layer2Drips = layer2.querySelectorAll(".frosting-drip");
-                const layer3Drips = layer3.querySelectorAll(".frosting-drip");
+            function initGanacheDrips() {
+                const layer1Drips = layer1.querySelectorAll(".ganache-drip");
+                const layer2Drips = layer2.querySelectorAll(".ganache-drip");
+                const layer3Drips = layer3.querySelectorAll(".ganache-drip");
                 
                 layer1Drips.forEach(drip => {
-                    drip.style.background = "linear-gradient(to right, #ffab91, #ff8a65)";
+                    drip.style.background = "linear-gradient(to bottom, #3d2b1f, #2d1c14)";
                 });
                 
                 layer2Drips.forEach(drip => {
-                    drip.style.background = "linear-gradient(to right, #f06292, #ec407a)";
+                    drip.style.background = "linear-gradient(to bottom, #3d2b1f, #2d1c14)";
                 });
                 
                 layer3Drips.forEach(drip => {
-                    drip.style.background = "linear-gradient(to right, #4dd0e1, #26c6da)";
+                    drip.style.background = "linear-gradient(to bottom, #3d2b1f, #2d1c14)";
                 });
             }
             
-            startButton.addEventListener("click", function() {
-                startAnimation();
-                this.remove();
-            });
-
-            startButton.addEventListener("touchstart", function(e) {
-                e.preventDefault();
-                startAnimation();
-                this.remove();
-            });
-
             function createCandlesAndStrawberries() {
-                const existingCandles = document.querySelectorAll(".candle");
-                const existingStrawberries = document.querySelectorAll(".strawberry");
-                existingCandles.forEach(candle => candle.remove());
-                existingStrawberries.forEach(strawberry => strawberry.remove());
+                const candles = layer3.querySelectorAll(".candle");
+                const strawberries = layer3.querySelectorAll(".strawberry");
                 
-                const candlePositions = [
-                    {left: "25%", delay: 0},
-                    {left: "50%", delay: 500},
-                    {left: "75%", delay: 1000}
-                ];
-                
-                const strawberryPositions = [
-                    {left: "35%", delay: 250},
-                    {left: "65%", delay: 750}
-                ];
-                
-                candlePositions.forEach(position => {
-                    const candle = document.createElement("div");
-                    candle.className = "candle";
-                    candle.style.left = position.left;
-                    const flame = document.createElement("div");
-                    flame.className = "flame";
-                    candle.appendChild(flame);
-                    layer3.appendChild(candle);
-                    
-                    setTimeout(() => {
-                        candle.style.bottom = "70px";
-                        candle.style.opacity = "1";
-                        const candleRect = candle.getBoundingClientRect();
-                        const containerRect = cakeContainer.getBoundingClientRect();
-                        createSplash(
-                            candleRect.left - containerRect.left + candle.offsetWidth/2, 
-                            candleRect.bottom - containerRect.top
-                        );
-                    }, position.delay);
+                candles.forEach((candle) => {
+                    candle.style.top = "-35px";
+                    candle.style.opacity = "1";
                 });
                 
-                strawberryPositions.forEach(position => {
-                    const strawberry = document.createElement("div");
-                    strawberry.className = "strawberry";
-                    strawberry.style.left = position.left;
-                    strawberry.style.bottom = "70px";
-                    const shine = document.createElement("div");
-                    shine.className = "strawberry-shine";
-                    strawberry.appendChild(shine);
-                    layer3.appendChild(strawberry);
-                    setTimeout(() => {
-                        strawberry.style.opacity = "1";
-                    }, position.delay + 400);
+                strawberries.forEach((strawberry) => {
+                    strawberry.style.top = "-24px";
+                    strawberry.style.opacity = "1";
                 });
                 
                 addDecorations();
@@ -772,7 +773,7 @@
                 setTimeout(() => {
                     createPartyPoppers();
                     createSparkles();
-                }, 3000);
+                }, 1000);
             }
             
             function createPartyPoppers() {
@@ -793,11 +794,11 @@
                         cakeContainer.appendChild(popper);
                         popper.style.animation = "popperBurst 0.7s forwards";
                         
-                        for (let i = 0; i < 50; i++) {
+                        for (let i = 0; i < 20; i++) {
                             createConfetti(pos.x, pos.y);
                         }
                         
-                        for (let i = 0; i < 4; i++) {
+                        for (let i = 0; i < 3; i++) {
                             const firework = document.createElement("div");
                             firework.className = "firework";
                             firework.style.left = (pos.x + (Math.random() * 60 - 30)) + "px";
@@ -809,7 +810,7 @@
                         }
                         
                         setTimeout(() => popper.remove(), 700);
-                    }, index * 400);
+                    }, index * 300);
                 });
                 
                 setTimeout(() => {
@@ -819,7 +820,7 @@
                     text.style.animationDelay = "0.4s";
                     audio.pause();
                     audio.currentTime = 0;
-                }, 2500);
+                }, 1500);
             }
             
             function createConfetti(x, y) {
@@ -843,7 +844,7 @@
                 confetti.style.boxShadow = `0 0 6px ${color}`;
                 
                 const angle = Math.random() * Math.PI * 2;
-                const distance = Math.random() * 100;
+                const distance = Math.random() * 80;
                 const confettiX = x + Math.cos(angle) * distance;
                 const confettiY = y + Math.sin(angle) * distance;
                 
@@ -851,9 +852,9 @@
                 confetti.style.top = confettiY + "px";
                 
                 cakeContainer.appendChild(confetti);
-                confetti.style.animation = `confettiFall ${Math.random() * 1.2 + 1.2}s forwards`;
+                confetti.style.animation = `confettiFall ${Math.random() * 1 + 1}s forwards`;
                 confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
-                setTimeout(() => confetti.remove(), 2500);
+                setTimeout(() => confetti.remove(), 2000);
             }
             
             function createSplash(x, y) {
@@ -864,7 +865,7 @@
                 cakeContainer.appendChild(splash);
                 splash.style.animation = "splash 0.4s forwards";
                 
-                for (let i = 0; i < 10; i++) {
+                for (let i = 0; i < 5; i++) {
                     const crumb = document.createElement("div");
                     crumb.className = "crumb";
                     const angle = Math.random() * Math.PI * 2;
@@ -874,7 +875,7 @@
                     crumb.style.left = crumbX + "px";
                     crumb.style.top = crumbY + "px";
                     crumb.style.transform = `scale(${Math.random() * 0.7 + 0.4})`;
-                    crumb.style.background = Math.random() > 0.5 ? "#ffccbc" : "#ec407a";
+                    crumb.style.background = Math.random() > 0.5 ? "#5c4033" : "#4a3528";
                     cakeContainer.appendChild(crumb);
                     setTimeout(() => {
                         crumb.style.opacity = "1";
@@ -898,9 +899,8 @@
                     const radius = index === 0 ? 55 : index === 1 ? 75 : 95;
                     for (let i = 0; i < count; i++) {
                         const angle = (i / count) * 2 * Math.PI;
-                        const offset = Math.random() * 8 - 4;
-                        const x = 50 + (Math.cos(angle) * radius + offset) / (index === 0 ? 2.9 : index === 1 ? 2.6 : 2.3);
-                        const y = 50 + (Math.sin(angle) * radius + offset) / (index === 0 ? 2.9 : index === 1 ? 2.6 : 2.3);
+                        const x = 50 + (Math.cos(angle) * radius) / (index === 0 ? 2.9 : index === 1 ? 2.6 : 2.3);
+                        const y = 50 + (Math.sin(angle) * radius) / (index === 0 ? 2.9 : index === 1 ? 2.6 : 2.3);
                         
                         const sprinkle = document.createElement("div");
                         sprinkle.className = "sprinkle";
@@ -909,39 +909,27 @@
                         sprinkle.style.top = y + "%";
                         sprinkle.style.transform = `rotate(${Math.random() * 360}deg)`;
                         layer.appendChild(sprinkle);
-                        setTimeout(() => sprinkle.style.opacity = "1", 2500 + Math.random() * 400);
-                    }
-                });
-                
-                const candyCounts = { layer3: 8, layer2: 10, layer1: 12 };
-                Object.keys(layers).forEach((layerKey, index) => {
-                    const layer = layers[layerKey];
-                    const count = candyCounts[layerKey];
-                    const radius = index === 0 ? 45 : index === 1 ? 65 : 85;
-                    for (let i = 0; i < count; i++) {
-                        const angle = (i / count) * 2 * Math.PI + Math.PI / count;
-                        const offset = Math.random() * 6 - 3;
-                        const x = 50 + (Math.cos(angle) * radius + offset) / (index === 0 ? 2.9 : index === 1 ? 2.6 : 2.3);
-                        const y = 50 + (Math.sin(angle) * radius + offset) / (index === 0 ? 2.9 : index === 1 ? 2.6 : 2.3);
-                        
-                        const candy = document.createElement("div");
-                        candy.className = "candy";
-                        candy.style.background = colors[Math.floor(Math.random() * colors.length)];
-                        candy.style.left = x + "%";
-                        candy.style.top = y + "%";
-                        layer.appendChild(candy);
-                        setTimeout(() => candy.style.opacity = "1", 2700 + Math.random() * 400);
+                        setTimeout(() => sprinkle.style.opacity = "1", 1000 + i * 50);
                     }
                 });
             }
             
             function startAnimation() {
+                startButton.classList.add("hidden");
                 resetAnimation();
-                initFrostingDrips();
+                initGanacheDrips();
                 message.style.opacity = "0";
                 message.style.animation = "none";
                 
                 audio.play().catch(error => console.error("Audio playback failed:", error));
+                
+                // Make cake container visible
+                cakeContainer.style.opacity = "1";
+                
+                // Start balloon animations
+                document.querySelectorAll(".balloon").forEach(balloon => {
+                    balloon.classList.add("animated");
+                });
                 
                 setTimeout(() => {
                     layer1.style.transform = "translateX(-50%) translateY(0)";
@@ -951,13 +939,16 @@
                 setTimeout(() => {
                     layer2.style.transform = "translateX(-50%) translateY(0)";
                     layer2.style.opacity = "1";
-                }, 1200);
+                }, 1000);
                 
                 setTimeout(() => {
                     layer3.style.transform = "translateX(-50%) translateY(0)";
                     layer3.style.opacity = "1";
-                    setTimeout(() => createCandlesAndStrawberries(), 800);
-                }, 2000);
+                    createCandlesAndStrawberries();
+                }, 1600);
+                
+                // Start particles
+                setTimeout(createParticles, 1000);
             }
             
             function resetAnimation() {
@@ -969,38 +960,47 @@
                 layer2.style.opacity = "0";
                 layer3.style.transform = "translateX(-50%) translateY(60px)";
                 layer3.style.opacity = "0";
+                cakeContainer.style.opacity = "0";
                 audio.pause();
                 audio.currentTime = 0;
                 
-                const candles = document.querySelectorAll(".candle");
-                const strawberries = document.querySelectorAll(".strawberry");
+                document.querySelectorAll(".balloon").forEach(balloon => {
+                    balloon.classList.remove("animated");
+                });
+                
                 const splashes = document.querySelectorAll(".splash");
-                const crumbs = document.querySelectorAll(".crumb");
+                const crumbs = document.querySelectorAll(".crumb:not(.cake-base .crumb)");
                 const sprinkles = document.querySelectorAll(".sprinkle");
-                const candies = document.querySelectorAll(".candy");
                 const confetti = document.querySelectorAll(".confetti");
                 const poppers = document.querySelectorAll(".party-popper");
                 const fireworks = document.querySelectorAll(".firework");
                 const sparkles = document.querySelectorAll(".sparkle");
+                const particles = document.querySelectorAll(".particle");
                 
                 [].concat(
-                    Array.from(candles),
-                    Array.from(strawberries),
                     Array.from(splashes),
                     Array.from(crumbs),
                     Array.from(sprinkles),
-                    Array.from(candies),
                     Array.from(confetti),
                     Array.from(poppers),
                     Array.from(fireworks),
-                    Array.from(sparkles)
-                ).forEach(el => el.remove());
+                    Array.from(sparkles),
+                    Array.from(particles)
+                ).forEach(el => {
+                    if (!el.parentElement.classList.contains("cake-base")) {
+                        el.remove();
+                    }
+                });
             }
             
-            initFrostingDrips();
-            setTimeout(createSparkles, 800);
-            setTimeout(createParticles, 400);
-            setInterval(createParticles, 4000);
+            startButton.addEventListener("click", startAnimation);
+            startButton.addEventListener("touchstart", (e) => {
+                e.preventDefault();
+                startAnimation();
+            });
+            
+            // Initialize ganache drips
+            initGanacheDrips();
         });
     </script>
 </body>
