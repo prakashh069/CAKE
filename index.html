@@ -19,7 +19,7 @@
             min-height: 100vh;
             background: linear-gradient(135deg, #ff6b6b, #ffcc00, #4dd0e1, #f06292, #ffd740);
             background-size: 600% 600%;
-            animation: gradientBG 12s ease infinite;
+            animation: gradientBG 15s ease infinite;
             font-family: 'Comic Sans MS', 'Arial', sans-serif;
             overflow: hidden;
             position: relative;
@@ -85,30 +85,30 @@
             width: 200%;
             height: 200%;
             background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
-            animation: sparkleBurst 2.5s infinite;
+            animation: sparkleBurst 3s infinite;
             z-index: -1;
         }
         
         @keyframes sparkleBurst {
             0% { transform: scale(1); opacity: 0.6; }
-            50% { transform: scale(1.3); opacity: 0.9; }
+            50% { transform: scale(1.4); opacity: 1; }
             100% { transform: scale(1); opacity: 0.6; }
         }
         
         .birthday-text {
             display: inline-block;
-            animation: bounceIn 0.6s forwards;
+            animation: bounceIn 0.8s forwards;
         }
         
         @keyframes bounceIn {
             0% { transform: scale(0); opacity: 0; }
-            60% { transform: scale(1.3); opacity: 1; }
+            60% { transform: scale(1.4); opacity: 1; }
             100% { transform: scale(1); }
         }
         
         @keyframes pulseBirthday {
             0% { transform: translateX(-50%) scale(1); box-shadow: 0 8px 20px rgba(255, 64, 129, 0.5); }
-            50% { transform: translateX(-50%) scale(1.05); box-shadow: 0 12px 25px rgba(255, 64, 129, 0.6); }
+            50% { transform: translateX(-50%) scale(1.08); box-shadow: 0 12px 25px rgba(255, 64, 129, 0.7); }
             100% { transform: translateX(-50%) scale(1); box-shadow: 0 8px 20px rgba(255, 64, 129, 0.5); }
         }
         
@@ -154,7 +154,7 @@
             left: 50%;
             transform: translateX(-50%) translateY(60px);
             opacity: 0;
-            transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+            transition: transform 1s ease-out, opacity 1s ease-out;
             border-radius: 15px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.3);
             will-change: transform, opacity;
@@ -228,7 +228,7 @@
         
         .ganache-drip {
             position: absolute;
-            background: linear-gradient(to bottom, #3d2b1f, #2d1c14);
+            background: linear-gradient(to bottom, #ff4081, #d81b60);
             top: 100%;
             border-radius: 0 0 10px 10px;
             z-index: 5;
@@ -261,12 +261,12 @@
         }
         
         .candle.falling {
-            animation: fallFromAbove 0.6s ease-out forwards;
+            animation: fallFromAbove 0.8s ease-out forwards;
         }
         
         @keyframes fallFromAbove {
             0% { top: -100px; opacity: 0; transform: translateX(-50%) scale(0.8); }
-            80% { top: -20px; opacity: 1; transform: translateX(-50%) scale(1.1); }
+            80% { top: -20px; opacity: 1; transform: translateX(-50%) scale(1.2); }
             100% { top: -35px; opacity: 1; transform: translateX(-50%) scale(1); }
         }
         
@@ -281,7 +281,7 @@
             border-radius: 50% 50% 40% 40%;
             box-shadow: 0 0 10px #ff5722, 0 0 20px rgba(255, 87, 34, 0.6);
             transform-origin: bottom;
-            animation: flicker 0.8s infinite alternate;
+            animation: flicker 1s infinite alternate;
             will-change: transform, opacity;
         }
         
@@ -299,12 +299,12 @@
         }
         
         .strawberry.falling {
-            animation: fallStrawberry 0.6s ease-out forwards;
+            animation: fallStrawberry 0.8s ease-out forwards;
         }
         
         @keyframes fallStrawberry {
             0% { top: -100px; opacity: 0; transform: translateX(-50%) scale(0.8); }
-            80% { top: -18px; opacity: 1; transform: translateX(-50%) scale(1.1); }
+            80% { top: -18px; opacity: 1; transform: translateX(-50%) scale(1.2); }
             100% { top: -24px; opacity: 1; transform: translateX(-50%) scale(1); }
         }
         
@@ -348,9 +348,9 @@
         
         @keyframes flicker {
             0% { transform: translateX(-50%) scaleY(1); opacity: 0.9; }
-            25% { transform: translateX(-50%) scaleY(1.2) skewX(3deg); opacity: 1; }
-            50% { transform: translateX(-50%) scaleY(0.8) skewX(-2deg); opacity: 0.95; }
-            75% { transform: translateX(-50%) scaleY(1.1) skewX(-3deg); opacity: 1; }
+            25% { transform: translateX(-50%) scaleY(1.3) skewX(3deg); opacity: 1; }
+            50% { transform: translateX(-50%) scaleY(0.7) skewX(-2deg); opacity: 0.95; }
+            75% { transform: translateX(-50%) scaleY(1.2) skewX(-3deg); opacity: 1; }
             100% { transform: translateX(-50%) scaleY(0.9) skewX(2deg); opacity: 0.9; }
         }
         
@@ -368,8 +368,8 @@
         
         @keyframes splash {
             0% { transform: scale(0); opacity: 0.9; }
-            50% { transform: scale(1.2); opacity: 0.7; }
-            100% { transform: scale(1.8); opacity: 0; }
+            50% { transform: scale(1.4); opacity: 0.7; }
+            100% { transform: scale(2); opacity: 0; }
         }
         
         .sprinkle {
@@ -378,7 +378,7 @@
             height: 10px;
             border-radius: 4px;
             opacity: 0;
-            transition: opacity 0.4s ease;
+            transition: opacity 0.5s ease;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
             will-change: opacity;
         }
@@ -442,8 +442,8 @@
         
         @keyframes confettiFall {
             0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-            50% { transform: translateY(60px) rotate(180deg); opacity: 0.9; }
-            100% { transform: translateY(120px) rotate(360deg); opacity: 0; }
+            50% { transform: translateY(80px) rotate(180deg); opacity: 0.9; }
+            100% { transform: translateY(160px) rotate(360deg); opacity: 0; }
         }
         
         .party-popper {
@@ -460,60 +460,137 @@
         
         @keyframes popperBurst {
             0% { transform: scale(0.4); opacity: 1; }
-            50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 35px rgba(255, 215, 0, 0.9); }
-            100% { transform: scale(1.6); opacity: 0; }
+            50% { transform: scale(1.5); opacity: 1; box-shadow: 0 0 40px rgba(255, 215, 0, 1); }
+            100% { transform: scale(2); opacity: 0; }
         }
         
         .firework {
             position: absolute;
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             background: radial-gradient(circle, #ffd740, #ff5722);
             border-radius: 50%;
             opacity: 0;
             z-index: 35;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 1);
             will-change: transform, opacity;
         }
         
         @keyframes fireworkBurst {
             0% { transform: scale(0); opacity: 1; }
-            50% { transform: scale(2.5); opacity: 0.9; }
-            100% { transform: scale(3.5); opacity: 0; }
+            50% { transform: scale(3); opacity: 0.9; }
+            100% { transform: scale(4); opacity: 0; }
         }
         
         .balloon {
             position: absolute;
             width: 60px;
             height: 80px;
-            background: radial-gradient(circle at 30% 30%, #ffd740, #ff9100);
             border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
             opacity: 0;
             z-index: 2;
             transform: translateZ(0);
             will-change: transform, opacity;
+            background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.3));
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3), 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .balloon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.8), transparent 50%);
+            opacity: 0.7;
+            z-index: 1;
         }
         
         .balloon::after {
             content: '';
             position: absolute;
-            bottom: -25px;
+            bottom: -30px;
             left: 50%;
             transform: translateX(-50%);
-            width: 3px;
-            height: 25px;
-            background: #bdbdbd;
+            width: 4px;
+            height: 30px;
+            background: linear-gradient(to bottom, #d4d4d4, #a8a8a8);
+            border-radius: 2px;
+            box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+            animation: stringSway 5s infinite ease-in-out;
+            transform-origin: top;
+        }
+        
+        .balloon-knot {
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, #888, #666);
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        @keyframes stringSway {
+            0% { transform: translateX(-50%) rotate(0deg); }
+            50% { transform: translateX(-50%) rotate(3deg); }
+            100% { transform: translateX(-50%) rotate(0deg); }
         }
         
         .balloon.animated {
-            opacity: 0.8;
-            animation: float 12s infinite ease-in-out;
+            opacity: 0.95;
+            animation: float 10s infinite ease-in-out;
         }
         
-        @keyframes float {
-            0% { transform: translateY(0) translateX(0); }
-            50% { transform: translateY(-120vh) translateX(30px); }
-            100% { transform: translateY(0) translateX(0); }
+        .balloon[data-float="1"] { animation: float1 10s infinite ease-in-out; }
+        .balloon[data-float="2"] { animation: float2 11s infinite ease-in-out; }
+        .balloon[data-float="3"] { animation: float3 9s infinite ease-in-out; }
+        .balloon[data-float="4"] { animation: float4 10.5s infinite ease-in-out; }
+        .balloon[data-float="5"] { animation: float5 9.5s infinite ease-in-out; }
+        
+        @keyframes float1 {
+            0% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
+            25% { transform: translateY(-50vh) translateX(15px) rotate(4deg) scale(1.02); }
+            50% { transform: translateY(-100vh) translateX(-10px) rotate(-3deg) scale(1.03); }
+            75% { transform: translateY(-50vh) translateX(20px) rotate(2deg) scale(1.01); }
+            100% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
+        }
+        
+        @keyframes float2 {
+            0% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
+            25% { transform: translateY(-55vh) translateX(-12px) rotate(-5deg) scale(1.01); }
+            50% { transform: translateY(-110vh) translateX(8px) rotate(3deg) scale(1.02); }
+            75% { transform: translateY(-55vh) translateX(-15px) rotate(-2deg) scale(1.03); }
+            100% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
+        }
+        
+        @keyframes float3 {
+            0% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
+            25% { transform: translateY(-45vh) translateX(18px) rotate(3deg) scale(1.03); }
+            50% { transform: translateY(-90vh) translateX(-15px) rotate(-4deg) scale(1.02); }
+            75% { transform: translateY(-45vh) translateX(10px) rotate(2deg) scale(1.01); }
+            100% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
+        }
+        
+        @keyframes float4 {
+            0% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
+            25% { transform: translateY(-60vh) translateX(-10px) rotate(-3deg) scale(1.02); }
+            50% { transform: translateY(-120vh) translateX(12px) rotate(4deg) scale(1.03); }
+            75% { transform: translateY(-60vh) translateX(-8px) rotate(-2deg) scale(1.01); }
+            100% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
+        }
+        
+        @keyframes float5 {
+            0% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
+            25% { transform: translateY(-50vh) translateX(14px) rotate(5deg) scale(1.01); }
+            50% { transform: translateY(-100vh) translateX(-12px) rotate(-3deg) scale(1.02); }
+            75% { transform: translateY(-50vh) translateX(16px) rotate(2deg) scale(1.03); }
+            100% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
         }
         
         .particle {
@@ -524,7 +601,7 @@
             border-radius: 50%;
             opacity: 0;
             z-index: 3;
-            animation: particleFloat 8s infinite linear;
+            animation: particleFloat 10s infinite linear;
             transform: translateZ(0);
             will-change: transform, opacity;
         }
@@ -597,6 +674,16 @@
                 font-size: 16px;
                 top: 82%;
             }
+            
+            .balloon {
+                width: 50px;
+                height: 70px;
+            }
+            
+            .balloon-knot {
+                width: 7px;
+                height: 7px;
+            }
         }
         
         @media (max-width: 350px) {
@@ -648,6 +735,16 @@
                 font-size: 14px;
                 top: 80%;
             }
+            
+            .balloon {
+                width: 45px;
+                height: 60px;
+            }
+            
+            .balloon-knot {
+                width: 6px;
+                height: 6px;
+            }
         }
     </style>
     <svg style="display: none">
@@ -662,11 +759,13 @@
     </svg>
 </head>
 <body>
-    <div class="balloon" style="left: 5%; bottom: 5%; animation-delay: 0s;"></div>
-    <div class="balloon" style="right: 10%; bottom: 15%; animation-delay: 4s; background: radial-gradient(circle at 30% 30%, #00e5ff, #0088cc);"></div>
-    <div class="balloon" style="left: 15%; bottom: 10%; animation-delay: 8s; background: radial-gradient(circle at 30% 30%, #ff4081, #d81b60);"></div>
-    <div class="balloon" style="right: 20%; bottom: 5%; animation-delay: 2s; background: radial-gradient(circle at 30% 30%, #4caf50, #2e7d32);"></div>
-    <div class="balloon" style="left: 25%; bottom: 20%; animation-delay: 6s; background: radial-gradient(circle at 30% 30%, #ab47bc, #7b1fa2);"></div>
+    <div class="balloon" data-float="1" style="left: 5%; bottom: 5%; animation-delay: 0s; background: radial-gradient(circle at 40% 40%, #ffd740, #ff9100);"></div>
+    <div class="balloon" data-float="2" style="right: 10%; bottom: 15%; animation-delay: 4s; background: radial-gradient(circle at 40% 40%, #00e5ff, #0088cc);"></div>
+    <div class="balloon" data-float="3" style="left: 15%; bottom: 10%; animation-delay: 8s; background: radial-gradient(circle at 40% 40%, #ff4081, #d81b60);"></div>
+    <div class="balloon" data-float="4" style="right: 20%; bottom: 5%; animation-delay: 2s; background: radial-gradient(circle at 40% 40%, #4caf50, #2e7d32);"></div>
+    <div class="balloon" data-float="5" style="left: 25%; bottom: 20%; animation-delay: 6s; background: radial-gradient(circle at 40% 40%, #ab47bc, #7b1fa2);">
+        <div class="balloon-knot"></div>
+    </div>
     
     <div class="container">
         <div class="birthday-message">
@@ -686,13 +785,13 @@
                 <div class="candle" style="left: 20%;">
                     <div class="flame"></div>
                 </div>
-                <div class="strawberry" style="left: 35%;">
+                <div class="strawberry" style="left: 30%;">
                     <div class="strawberry-shine"></div>
                 </div>
                 <div class="candle" style="left: 50%;">
                     <div class="flame"></div>
                 </div>
-                <div class="strawberry" style="left: 65%;">
+                <div class="strawberry" style="left: 60%;">
                     <div class="strawberry-shine"></div>
                 </div>
                 <div class="candle" style="left: 80%;">
@@ -727,10 +826,10 @@
             </div>
         </div>
         
-        <button class="button" id="startButton">Send Birthday Surprise</button>
+        <button class="button" id="startButton">Birthday Surprise</button>
     </div>
 
-    <audio id="birthdayMusic" preload="auto" playsinline muted hidden>
+    <audio id="birthdayMusic" preload="auto" playsinline hidden>
         <source src="https://cdn.pixabay.com/audio/2022/03/24/01-40-00-623_960x540.wav" type="audio/wav">
         Your browser does not support the audio element.
     </audio>
@@ -748,32 +847,32 @@
             const colors = ["#ff5252", "#3f51b5", "#ffd600", "#4caf50", "#ab47bc", "#ff9100", "#f50057", "#00e5ff", "#ff4081", "#651fff", "#00e676", "#ff3d00"];
             
             function createSparkles() {
-                for (let i = 0; i < 15; i++) {
+                for (let i = 0; i < 25; i++) {
                     setTimeout(() => {
                         const sparkle = document.createElement("div");
                         sparkle.className = "sparkle";
                         sparkle.style.left = Math.random() * 100 + "vw";
                         sparkle.style.top = Math.random() * 100 + "vh";
-                        const size = Math.random() * 5 + 4;
+                        const size = Math.random() * 6 + 4;
                         sparkle.style.width = size + "px";
                         sparkle.style.height = size + "px";
                         document.body.appendChild(sparkle);
-                        sparkle.style.animation = `sparkle ${Math.random() * 1.5 + 1}s forwards`;
-                        setTimeout(() => sparkle.remove(), 2500);
-                    }, i * 200);
+                        sparkle.style.animation = `sparkle ${Math.random() * 2 + 1.5}s forwards`;
+                        setTimeout(() => sparkle.remove(), 3500);
+                    }, i * 250);
                 }
             }
             
             function createParticles() {
-                for (let i = 0; i < 10; i++) {
+                for (let i = 0; i < 15; i++) {
                     const particle = document.createElement("div");
                     particle.className = "particle";
                     particle.style.left = Math.random() * 100 + "vw";
                     particle.style.top = Math.random() * 100 + "vh";
                     particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-                    particle.style.animationDelay = `${Math.random() * 4}s`;
+                    particle.style.animationDelay = `${Math.random() * 5}s`;
                     document.body.appendChild(particle);
-                    setTimeout(() => particle.remove(), 8000);
+                    setTimeout(() => particle.remove(), 10000);
                 }
             }
             
@@ -783,15 +882,15 @@
                 const layer3Drips = layer3.querySelectorAll(".ganache-drip");
                 
                 layer1Drips.forEach(drip => {
-                    drip.style.background = "linear-gradient(to bottom, #3d2b1f, #2d1c14)";
+                    drip.style.background = "linear-gradient(to bottom, #ff4081, #d81b60)";
                 });
                 
                 layer2Drips.forEach(drip => {
-                    drip.style.background = "linear-gradient(to bottom, #3d2b1f, #2d1c14)";
+                    drip.style.background = "linear-gradient(to bottom, #ff4081, #d81b60)";
                 });
                 
                 layer3Drips.forEach(drip => {
-                    drip.style.background = "linear-gradient(to bottom, #3d2b1f, #2d1c14)";
+                    drip.style.background = "linear-gradient(to bottom, #ff4081, #d81b60)";
                 });
             }
             
@@ -802,13 +901,13 @@
                 candles.forEach((candle, index) => {
                     setTimeout(() => {
                         candle.classList.add("falling");
-                    }, index * 100);
+                    }, index * 150);
                 });
                 
                 strawberries.forEach((strawberry, index) => {
                     setTimeout(() => {
                         strawberry.classList.add("falling");
-                    }, index * 100);
+                    }, index * 150);
                 });
                 
                 addDecorations();
@@ -816,7 +915,7 @@
                 setTimeout(() => {
                     createPartyPoppers();
                     createSparkles();
-                }, 1000);
+                }, 1500);
             }
             
             function createPartyPoppers() {
@@ -835,35 +934,35 @@
                         popper.style.top = pos.y + "px";
                         popper.style.background = `radial-gradient(circle at center, ${colors[Math.floor(Math.random() * colors.length)]}, ${colors[Math.floor(Math.random() * colors.length)]})`;
                         cakeContainer.appendChild(popper);
-                        popper.style.animation = "popperBurst 0.7s forwards";
+                        popper.style.animation = "popperBurst 0.9s forwards";
                         
-                        for (let i = 0; i < 20; i++) {
+                        for (let i = 0; i < 30; i++) {
                             createConfetti(pos.x, pos.y);
                         }
                         
-                        for (let i = 0; i < 3; i++) {
+                        for (let i = 0; i < 5; i++) {
                             const firework = document.createElement("div");
                             firework.className = "firework";
-                            firework.style.left = (pos.x + (Math.random() * 60 - 30)) + "px";
-                            firework.style.top = (pos.y + (Math.random() * 60 - 30)) + "px";
+                            firework.style.left = (pos.x + (Math.random() * 80 - 40)) + "px";
+                            firework.style.top = (pos.y + (Math.random() * 80 - 40)) + "px";
                             firework.style.background = `radial-gradient(circle, ${colors[Math.floor(Math.random() * colors.length)]}, transparent)`;
                             cakeContainer.appendChild(firework);
-                            firework.style.animation = `fireworkBurst ${Math.random() * 0.4 + 0.4}s forwards`;
-                            setTimeout(() => firework.remove(), 800);
+                            firework.style.animation = `fireworkBurst ${Math.random() * 0.5 + 0.5}s forwards`;
+                            setTimeout(() => firework.remove(), 1000);
                         }
                         
-                        setTimeout(() => popper.remove(), 700);
-                    }, index * 300);
+                        setTimeout(() => popper.remove(), 900);
+                    }, index * 400);
                 });
                 
                 setTimeout(() => {
                     message.style.opacity = "1";
-                    message.style.animation = "pulseBirthday 1.8s infinite ease-in-out";
+                    message.style.animation = "pulseBirthday 2s infinite ease-in-out";
                     const text = document.querySelector(".birthday-text");
-                    text.style.animationDelay = "0.4s";
+                    text.style.animationDelay = "0.5s";
                     audio.pause();
                     audio.currentTime = 0;
-                }, 1500);
+                }, 2000);
             }
             
             function createConfetti(x, y) {
@@ -874,20 +973,20 @@
                     confetti.style.borderRadius = "50%";
                 } else if (shape > 0.33) {
                     confetti.style.borderRadius = "0";
-                    confetti.style.width = (Math.random() * 6 + 6) + "px";
-                    confetti.style.height = (Math.random() * 4 + 4) + "px";
+                    confetti.style.width = (Math.random() * 8 + 6) + "px";
+                    confetti.style.height = (Math.random() * 5 + 4) + "px";
                 } else {
                     confetti.style.clipPath = "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)";
-                    confetti.style.width = "14px";
-                    confetti.style.height = "14px";
+                    confetti.style.width = "16px";
+                    confetti.style.height = "16px";
                 }
                 
                 const color = colors[Math.floor(Math.random() * colors.length)];
                 confetti.style.background = `linear-gradient(135deg, ${color}, white, ${color})`;
-                confetti.style.boxShadow = `0 0 6px ${color}`;
+                confetti.style.boxShadow = `0 0 8px ${color}`;
                 
                 const angle = Math.random() * Math.PI * 2;
-                const distance = Math.random() * 80;
+                const distance = Math.random() * 100;
                 const confettiX = x + Math.cos(angle) * distance;
                 const confettiY = y + Math.sin(angle) * distance;
                 
@@ -895,46 +994,45 @@
                 confetti.style.top = confettiY + "px";
                 
                 cakeContainer.appendChild(confetti);
-                confetti.style.animation = `confettiFall ${Math.random() * 1 + 1}s forwards`;
+                confetti.style.animation = `confettiFall ${Math.random() * 1.5 + 1.5}s forwards`;
                 confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
-                setTimeout(() => confetti.remove(), 2000);
+                setTimeout(() => confetti.remove(), 3000);
             }
             
             function createSplash(x, y) {
                 const splash = document.createElement("div");
                 splash.className = "splash";
                 splash.style.left = (x - 12) + "px";
-                // Fixed typo: Changed 'x' to 'y' for top positioning
                 splash.style.top = (y - 12) + "px";
                 cakeContainer.appendChild(splash);
-                splash.style.animation = "splash 0.4s forwards";
+                splash.style.animation = "splash 0.5s forwards";
                 
-                for (let i = 0; i < 5; i++) {
+                for (let i = 0; i < 7; i++) {
                     const crumb = document.createElement("div");
                     crumb.className = "crumb";
                     const angle = Math.random() * Math.PI * 2;
-                    const distance = Math.random() * 30 + 15;
+                    const distance = Math.random() * 40 + 20;
                     const crumbX = x + Math.cos(angle) * distance;
                     const crumbY = y + Math.sin(angle) * distance;
                     crumb.style.left = crumbX + "px";
                     crumb.style.top = crumbY + "px";
-                    crumb.style.transform = `scale(${Math.random() * 0.7 + 0.4})`;
+                    crumb.style.transform = `scale(${Math.random() * 0.8 + 0.5})`;
                     crumb.style.background = Math.random() > 0.5 ? "#5c4033" : "#4a3528";
                     cakeContainer.appendChild(crumb);
                     setTimeout(() => {
                         crumb.style.opacity = "1";
                         setTimeout(() => {
                             crumb.style.opacity = "0";
-                            setTimeout(() => crumb.remove(), 250);
-                        }, 1200);
-                    }, Math.random() * 150);
+                            setTimeout(() => crumb.remove(), 300);
+                        }, 1500);
+                    }, Math.random() * 200);
                 }
                 
-                setTimeout(() => splash.remove(), 400);
+                setTimeout(() => splash.remove(), 500);
             }
             
             function addDecorations() {
-                const sprinkleCounts = { layer3: 10, layer2: 12, layer1: 14 };
+                const sprinkleCounts = { layer3: 12, layer2: 15, layer1: 18 };
                 const layers = { layer3, layer2, layer1 };
                 
                 Object.keys(layers).forEach((layerKey, index) => {
@@ -953,12 +1051,14 @@
                         sprinkle.style.top = y + "%";
                         sprinkle.style.transform = `rotate(${Math.random() * 360}deg)`;
                         layer.appendChild(sprinkle);
-                        setTimeout(() => sprinkle.style.opacity = "1", 1000 + i * 50);
+                        setTimeout(() => sprinkle.style.opacity = "1", 1500 + i * 60);
                     }
                 });
             }
             
-            function startAnimation() {
+            function startAnimation(e) {
+                e.preventDefault();
+                console.log("Button clicked - Starting animation");
                 startButton.classList.add("hidden");
                 resetAnimation();
                 initGanacheDrips();
@@ -969,9 +1069,9 @@
                 audio.play().catch(error => {
                     console.error("Audio playback failed:", error.message);
                     if (error.name === "NotAllowedError") {
-                        console.log("Audio blocked: Requires user interaction. Ensure audio is triggered by a direct user action.");
+                        console.log("Audio blocked: Requires user interaction.");
                     } else if (error.name === "NotSupportedError") {
-                        console.log("Audio format not supported. Try a different source or format.");
+                        console.log("Audio format not supported.");
                     }
                 });
                 
@@ -984,20 +1084,20 @@
                 setTimeout(() => {
                     layer1.style.transform = "translateX(-50%) translateY(0)";
                     layer1.style.opacity = "1";
-                }, 400);
+                }, 600);
                 
                 setTimeout(() => {
                     layer2.style.transform = "translateX(-50%) translateY(0)";
                     layer2.style.opacity = "1";
-                }, 1000);
+                }, 1400);
                 
                 setTimeout(() => {
                     layer3.style.transform = "translateX(-50%) translateY(0)";
                     layer3.style.opacity = "1";
                     createCandlesAndStrawberries();
-                }, 1600);
+                }, 2200);
                 
-                setTimeout(createParticles, 1000);
+                setTimeout(createParticles, 1500);
             }
             
             function resetAnimation() {
@@ -1055,7 +1155,7 @@
             }
             
             startButton.addEventListener("click", startAnimation);
-            startButton.addEventListener("touchstart", startAnimation);
+            startButton.addEventListener("touchstart", startAnimation, { passive: false });
             
             initGanacheDrips();
         });
